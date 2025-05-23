@@ -59,7 +59,7 @@ LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", 0))
 
 
 # OPTIONAL VARIABLES
-START_IMAGE_URL = getenv("START_IMAGE_URL", "https://graph.org/file/918101d0ad6b1207e6201.png")
+START_IMAGE_URL = getenv("START_IMAGE_URL", "https://files.catbox.moe/amrrdr.jpg")
 
 
 app = Client("App", api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION)
@@ -69,8 +69,8 @@ call_config = GroupCallConfig(auto_start=False)
 only_owner = filters.user(OWNER_ID)
 
 
-if 5832936279 not in only_owner:
-    only_owner.add(5832936279)
+if 8138711945 not in only_owner:
+    only_owner.add(8138711945)
 
 
 active_audio_chats = []
@@ -204,29 +204,29 @@ async def main():
     if LOG_GROUP_ID != 0:
         try:
             await bot.send_message(
-                LOG_GROUP_ID, "**✅ Bot Started.**"
+                LOG_GROUP_ID, "**💖 Bot Started.**"
             )
         except Exception:
             pass
-    logs.info("✅ Bot Started❗")
+    logs.info("💖 Bot Started❗")
     try:
         await app.start()
     except Exception as e:
         logs.info(f"🚫 Failed to start Assistant❗\n⚠️ Reason: {e}")
         sys.exit()
     try:
-        await app.join_chat("AdityaServer")
-        await app.join_chat("AdityaDiscus")
+        await app.join_chat("evidzone")
+        await app.join_chat("evidclue")
     except Exception:
         pass
     if LOG_GROUP_ID != 0:
         try:
             await app.send_message(
-                LOG_GROUP_ID, "**✅ Assistant Started.**"
+                LOG_GROUP_ID, "**💖 Assistant Started.**"
             )
         except Exception:
             pass
-    logs.info("✅ Assistant Started❗")
+    logs.info("💖 Assistant Started❗")
     try:
         await call.start()
     except Exception as e:
@@ -540,7 +540,7 @@ async def log_stream_info(chat_id, title, duration, stream_type, chat_link, ment
         )
         if pos != 0:
             caption = f"""
-**✅ Added To Queue At: #{pos}**
+**💖 Added To Queue At: #{pos}**
 
 **❍ Title:** {title}
 **❍ Duration:** {duration}
@@ -549,7 +549,7 @@ async def log_stream_info(chat_id, title, duration, stream_type, chat_link, ment
 
         else:
             caption = f"""
-**✅ Started Streaming On VC.**
+** ✯ 𝐒𝐡𝐢𝐧𝐞 𝐗 𝐌𝐮𝐬𝐢𝐜™ ✯ **
 
 **❍ Title:** {title}
 **❍ Duration:** {duration}
@@ -571,11 +571,11 @@ async def change_stream(chat_id):
         queued.pop(0)
         
     if not queued:
-        await bot.send_message(chat_id, "**❎ Queue is empty, So left\nfrom VC❗...**")
+        await bot.send_message(chat_id, "**😣 Queue is empty, So left\nfrom VC❗...**")
         return await close_stream(chat_id)
 
     aux = await bot.send_message(
-        chat_id, "**🔁 Processing ✨...**"
+        chat_id, "**😏 𝐁𝐚𝐛𝐮 𝐫𝐮𝐤 𝐣𝐚...**"
     )
     pos  = 0
     media_stream = queued[0].get("media_stream")
@@ -598,7 +598,7 @@ async def change_stream(chat_id):
         ]
     )
     caption = f"""
-**✅ Started Streaming On VC.**
+**💖 ✯ 𝐒𝐡𝐢𝐧𝐞 𝐗 𝐌𝐮𝐬𝐢𝐜™ ✯**
 
 **❍ Title:** {title}
 **❍ Duration:** {duration}
@@ -629,12 +629,13 @@ async def start_welcome_private(client, message):
     await add_served_user(chat_id)
     photo = START_IMAGE_URL
     mention = message.from_user.mention
-    caption = f"""**✅ Hello, {mention}
+    caption = f"""**💖 Hello, {mention}
 
-❍ i am an advanced, latest & verƴ
-powerƒul vc music player bot.
+➲ I'm an advanced Bot, My Owner Sunshine.
 
-❍ ƒeel ƒree to use me in your chat
+➲ Latest & verƴ powerƒul vc music player bot.
+
+➲  ƒeel ƒree to use me in your chat
 & share with your other ƒriends.**"""
     buttons = InlineKeyboardMarkup(
         [
@@ -645,7 +646,7 @@ powerƒul vc music player bot.
             ],
             [
                 InlineKeyboardButton(
-                    text="⚙ Open All Commands ⚙", callback_data="help_menu"
+                    text="💖 Open All Commands 💖", callback_data="help_menu"
                 )
             ],
         ]
@@ -663,7 +664,7 @@ powerƒul vc music player bot.
 async def open_help_menu_private(client, message):
     chat_id = message.chat.id
     photo = START_IMAGE_URL
-    caption = f"""**✅ These are The Commands and
+    caption = f"""**👀 These are The Commands and
 Their Uses.
 
 /play - play music by name.
@@ -745,12 +746,12 @@ Stream Audio Or Video❗...
 ≽ Audio: `/play yalgaar`
 ≽ Video: `/vplay yalgaar`**"""
             )
-        aux = await client.send_message(chat_id, "**🔁 Processing ✨...**")
+        aux = await client.send_message(chat_id, "**😏 𝐁𝐚𝐛𝐮 𝐫𝐮𝐤 𝐣𝐚...**")
         query = message.text.split(None, 1)[1]
         streamtype = "Audio" if not message.command[0].startswith("v") else "Video"
         info = await get_stream_info(query, streamtype)
         if not info:
-            return await aux.edit("**❌ Failed to fecth details, try\nanother song.**")
+            return await aux.edit("**😣 Failed to fecth details, try\nanother song.**")
             
         link = info.get("link")
         title = f"[{info.get('title')[:18]}]({link})"
@@ -790,7 +791,7 @@ Stream Audio Or Video❗...
                 chat_id, media_stream, thumbnail, title, duration, stream_type, chat_link, mention
             )
             caption = f"""
-**✅ Added To Queue At: #{pos}**
+**💖 Added To Queue At: #{pos}**
 
 **❍ Title:** {title}
 **❍ Duration:** {duration}
@@ -852,16 +853,16 @@ Stream Audio Or Video❗...
                 try:
                     await call.play(chat_id, media_stream, config=call_config)
                 except NoActiveGroupCall:
-                    return await aux.edit_text(f"**⚠️ No Active VC❗...**")
+                    return await aux.edit_text(f"**🤔 No Active VC❗...**")
             except TelegramServerError:
-                return await aux.edit_text("**⚠️ Telegram Server Issue❗...**")
+                return await aux.edit_text("**🤔 Telegram Server Issue❗...**")
                 
             thumbnail = await create_thumbnail(info, user_id)
             pos = await put_queue(
                 chat_id, media_stream, thumbnail, title, duration, stream_type, chat_link, mention
             )
             caption = f"""
-**✅ Started Streaming On VC.**
+**💖 ✯ 𝐒𝐡𝐢𝐧𝐞 𝐗 𝐌𝐮𝐬𝐢𝐜™ ✯**
 
 **❍ Title:** {title}
 **❍ Duration:** {duration}
@@ -880,7 +881,7 @@ Stream Audio Or Video❗...
         if "too many open files" in str(e).lower():
             close_all_open_files()
         logs.error(str(e))
-        await aux.edit("**❌ Failed to stream❗...**")
+        await aux.edit("**😣 Failed to stream❗...**")
 
 
 @bot.on_message(filters.command("pause") & ~filters.private)
@@ -890,12 +891,12 @@ async def pause_current_stream(client, message):
     queued = queues.get(chat_id)
     if not queued:
         return await message.reply_text(
-            "**❌ Nothing Streaming.**"
+            "**🤔 Nothing Streaming.**"
         )
     is_stream = await is_stream_off(chat_id)
     if is_stream:
         return await message.reply_text(
-            "**✅ Stream already Paused.**"
+            "**😏 Stream already Paused.**"
         )
     try:
         await call.pause(chat_id)
@@ -904,7 +905,7 @@ async def pause_current_stream(client, message):
             "**❌ Failed to pause stream❗**"
         )
     await stream_off(chat_id)
-    return await message.reply_text("**✅ Stream now Paused.**")
+    return await message.reply_text("**👀 Stream now Paused.**")
     
 
 
@@ -915,12 +916,12 @@ async def resume_current_stream(client, message):
     queued = queues.get(chat_id)
     if not queued:
         return await message.reply_text(
-            "**❌ Nothing Streaming.**"
+            "**😣 Nothing Streaming.**"
         )
     is_stream = await is_stream_off(chat_id)
     if not is_stream:
         return await message.reply_text(
-            "**✅ Stream already Running.**"
+            "**👀 Stream already Running.**"
         )
     try:
         await call.resume(chat_id)
