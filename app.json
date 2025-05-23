@@ -1,12 +1,12 @@
 {
-  "name": "AdityaPlayer",
+  "name": "Evidzone",
   "description": "An advanced, powerful & multi-featured vc streaming bot for telegram.",
   "keywords": [
     "musicbot",
     "vcbot",
     "musicplayer"
   ],
-  "repository": "https://github.com/adityahalder/adityaplayer",
+  "repository": "https://github.com/Evid3008/E-music-bot",
   "logo": "https://envs.sh/9oZ.jpg",
   "stack": "container",
   "env": {
