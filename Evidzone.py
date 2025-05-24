@@ -540,21 +540,21 @@ async def log_stream_info(chat_id, title, duration, stream_type, chat_link, ment
         )
         if pos != 0:
             caption = f"""
-**💖 Added To Queue At: #{pos}**
+**➲ Added To Queue At: #{pos}**
 
-**❍ Title:** {title}
-**❍ Duration:** {duration}
-**❍ Stream Type:** {stream_type}
-**❍ Requested By:** {mention}"""
+**➠ Title:** {title}
+**➠ Duration:** {duration}
+**➠ Stream Type:** {stream_type}
+**➠ Requested By:** {mention}"""
 
         else:
             caption = f"""
-** ✯ 𝐒𝐡𝐢𝐧𝐞 𝐗 𝐌𝐮𝐬𝐢𝐜™ ✯ **
+**➲ ✯ 𝐀𝐝𝐚 𝐗 𝐒𝐭𝐫𝐞𝐚𝐦𝐢𝐧𝐠™ ✯  **
 
-**❍ Title:** {title}
-**❍ Duration:** {duration}
-**❍ Stream Type:** {stream_type}
-**❍ Requested By:** {mention}"""
+**➠ Title:** {title}
+**➠ Duration:** {duration}
+**➠ Stream Type:** {stream_type}
+**➠ Requested By:** {mention}"""
         
         try:
             await bot.send_photo(LOG_GROUP_ID, photo=thumbnail, caption=caption, reply_markup=buttons)
@@ -575,7 +575,7 @@ async def change_stream(chat_id):
         return await close_stream(chat_id)
 
     aux = await bot.send_message(
-        chat_id, "**😏 𝐁𝐚𝐛𝐮 𝐫𝐮𝐤 𝐣𝐚...**"
+        chat_id, "**👾 Processing...**"
     )
     pos  = 0
     media_stream = queued[0].get("media_stream")
@@ -598,12 +598,12 @@ async def change_stream(chat_id):
         ]
     )
     caption = f"""
-**💖 ✯ 𝐒𝐡𝐢𝐧𝐞 𝐗 𝐌𝐮𝐬𝐢𝐜™ ✯**
+**➲ ✯ 𝐀𝐝𝐚 𝐗 𝐒𝐭𝐫𝐞𝐚𝐦𝐢𝐧𝐠™ ✯ **
 
-**❍ Title:** {title}
-**❍ Duration:** {duration}
-**❍ Stream Type:** {stream_type}
-**❍ Requested By:** {mention}"""
+**➠ Title:** {title}
+**➠ Duration:** {duration}
+**➠ Stream Type:** {stream_type}
+**➠ Requested By:** {mention}"""
     try:
         await aux.delete()
     except Exception:
@@ -629,9 +629,9 @@ async def start_welcome_private(client, message):
     await add_served_user(chat_id)
     photo = START_IMAGE_URL
     mention = message.from_user.mention
-    caption = f"""**💖 Hello, {mention}
+    caption = f"""**➲ Hello, {mention}
 
-➲ I'm an advanced Bot, My Owner Sunshine.
+➲ I'm an advanced Bot, My Owner Mr Evid.
 
 ➲ Latest & verƴ powerƒul vc music player bot.
 
@@ -646,7 +646,7 @@ async def start_welcome_private(client, message):
             ],
             [
                 InlineKeyboardButton(
-                    text="💖 Open All Commands 💖", callback_data="help_menu"
+                    text="⚙️ Open All Commands ⚙️", callback_data="help_menu"
                 )
             ],
         ]
@@ -746,7 +746,7 @@ Stream Audio Or Video❗...
 ≽ Audio: `/play yalgaar`
 ≽ Video: `/vplay yalgaar`**"""
             )
-        aux = await client.send_message(chat_id, "**😏 𝐁𝐚𝐛𝐮 𝐫𝐮𝐤 𝐣𝐚...**")
+        aux = await client.send_message(chat_id, "**👾 Processing...**")
         query = message.text.split(None, 1)[1]
         streamtype = "Audio" if not message.command[0].startswith("v") else "Video"
         info = await get_stream_info(query, streamtype)
@@ -791,12 +791,12 @@ Stream Audio Or Video❗...
                 chat_id, media_stream, thumbnail, title, duration, stream_type, chat_link, mention
             )
             caption = f"""
-**💖 Added To Queue At: #{pos}**
+**➲ Added To Queue At: #{pos}**
 
-**❍ Title:** {title}
-**❍ Duration:** {duration}
-**❍ Stream Type:** {stream_type}
-**❍ Requested By:** {mention}"""
+**➠ Title:** {title}
+**➠ Duration:** {duration}
+**➠ Stream Type:** {stream_type}
+**➠ Requested By:** {mention}"""
         
         else:
             try: 
@@ -862,12 +862,12 @@ Stream Audio Or Video❗...
                 chat_id, media_stream, thumbnail, title, duration, stream_type, chat_link, mention
             )
             caption = f"""
-**💖 ✯ 𝐒𝐡𝐢𝐧𝐞 𝐗 𝐌𝐮𝐬𝐢𝐜™ ✯**
+**➲ ✯ 𝐀𝐝𝐚 𝐗 𝐒𝐭𝐫𝐞𝐚𝐦𝐢𝐧𝐠™ ✯  ✯**
 
-**❍ Title:** {title}
-**❍ Duration:** {duration}
-**❍ Stream Type:** {stream_type}
-**❍ Requested By:** {mention}"""
+**➠ Title:** {title}
+**➠ Duration:** {duration}
+**➠ Stream Type:** {stream_type}
+**➠ Requested By:** {mention}"""
         
         try:
             await aux.delete()
@@ -995,10 +995,10 @@ async def open_help_menu_cb(client, query):
     mention = query.from_user.mention
     caption = f"""**✅ Hello, {mention}
 
-❍ i am an advanced, latest & verƴ
+➠ i am an advanced, latest & verƴ
 powerƒul vc music player bot.
 
-❍ ƒeel ƒree to use me in your chat
+➠ ƒeel ƒree to use me in your chat
 & share with your other ƒriends.**"""
     buttons = InlineKeyboardMarkup(
         [
@@ -1150,10 +1150,10 @@ async def post_bot_promotion(client, message):
     caption = f"""
 **✅ Hello friends,
 
-❍ i am an advanced, latest &
+➠ i am an advanced, latest &
 verƴ powerƒul vc player bot.
 
-❍ ƒeel ƒree to use me & share
+➠ ƒeel ƒree to use me & share
 with your other ƒriends.**"""
     buttons = InlineKeyboardMarkup(
         [
