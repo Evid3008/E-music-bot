@@ -7,7 +7,7 @@
 
 **1. At First Copy & Paste Below Command.**
 
-```apt update -y && apt install sudo -y && sudo apt install curl ffmpeg git nano python3-pip screen -y && cd && rm -rf AdityaPlayer && git clone https://github.com/AdityaHalder/AdityaPlayer && cd AdityaPlayer && pip3 install -r requirements.txt --force-reinstall && screen -R AdityaPlayer```
+```apt update -y && apt install sudo -y && sudo apt install curl ffmpeg git nano python3-pip screen -y && cd && rm -rf Evidzone && git clone https://github.com/Evid3008/E-music-bot && cd Evidzone && pip3 install -r requirements.txt --force-reinstall && screen -R Evidzone```
 
 
 **2. Now Run This Command & Add Your Variables.**
@@ -52,6 +52,6 @@
 
 
 > [!IMPORTANT]
-> If you use Aditya-Player, it is important that you have proper knowledge about it. You should follow the [**`Documentation`**](https://t.me/adityaserver) to learn about Aditya-Player.
+> If you use Aditya-Player, it is important that you have proper knowledge about it. You should follow the [**`Documentation`**](https://t.me/iq4u8) to learn about Aditya-Player.
 
 
