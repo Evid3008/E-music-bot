@@ -862,7 +862,7 @@ Stream Audio Or Video❗...
                 chat_id, media_stream, thumbnail, title, duration, stream_type, chat_link, mention
             )
             caption = f"""
-**➲ ✯ 𝐀𝐝𝐚 𝐗 𝐒𝐭𝐫𝐞𝐚𝐦𝐢𝐧𝐠™ ✯  ✯**
+**➲ ✯ 𝐀𝐝𝐚 𝐗 𝐒𝐭𝐫𝐞𝐚𝐦𝐢𝐧𝐠™ ✯ **
 
 **➠ Title:** {title}
 **➠ Duration:** {duration}
