@@ -1,5 +1,5 @@
 
-[![Deploy On Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/adityahalder/adityaplayer)
+[![Deploy On Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/Evid3008/E-music-bot)
 
 
 <h2>♨️ Host AdityaPlayer On VPS Server</h2>
